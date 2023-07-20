@@ -24,7 +24,7 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public Messaqe create(Messaqe messaqe) {
-        logger.info("create()");
+        logger.info("create() " + messaqe);
         return messageMapper.entityToModel(messageRepository.save(messageMapper.modelToEntity(messaqe)));
     }
 

@@ -22,9 +22,9 @@ public class MessageController {
 
     @PostMapping("/create")
     @Operation(summary = "Save new data message")
-    public Messaqe create() {
+    public Messaqe create(@RequestBody Messaqe messaqe) {
         logger.info("create()");
-        return messageService.create(new Messaqe());
+        return messageService.create(messaqe);
     }
 
     @GetMapping("/read/{id}")
