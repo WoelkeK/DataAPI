@@ -22,6 +22,6 @@ public class Schedule {
 
     private void clearDatabase() {
         logger.info("clearDatabase()");
-        messageRepository.deleteAll();
+//        messageRepository.deleteAll();
     }
 }
