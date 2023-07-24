@@ -10,6 +10,8 @@ import pl.medos.DataAPI.respository.entity.MessageEntity;
 import pl.medos.DataAPI.service.MessageService;
 import pl.medos.DataAPI.service.mapper.MessageMapper;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,5 +58,11 @@ public class MessageServiceImpl implements MessageService {
     public List<Messaqe> list() {
         logger.info("list()");
         return messageMapper.entitiesToModels(messageRepository.findAll());
+    }
+
+    @Override
+    public List<Messaqe> searchBetweenDatesHours(Date startTime, Date endTime) {
+        logger.info("findByBetweenHours");
+        return messageMapper.entitiesToModels(messageRepository.findByCreatedAtBetween(startTime, endTime));
     }
 }

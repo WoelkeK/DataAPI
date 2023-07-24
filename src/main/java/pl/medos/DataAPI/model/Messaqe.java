@@ -11,9 +11,12 @@ import org.springframework.format.datetime.DateFormatter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Date;
+import java.util.Locale;
 
 @Data
 @Builder
@@ -24,7 +27,6 @@ public class Messaqe {
     private Long id;
     private String device;
     private int cycle;
-    private LocalDateTime event = LocalDateTime.now(ZoneId.systemDefault());
-
+    private Date createdAt = new Date();
 
 }
