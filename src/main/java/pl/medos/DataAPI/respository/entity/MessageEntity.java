@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import jdk.jfr.Timestamp;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
+import pl.medos.DataAPI.model.Machine;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,7 +16,8 @@ import java.util.Date;
 @Data
 @Entity
 @NoArgsConstructor
-@Table(name = "MESSAGES")
+@AllArgsConstructor
+@Table(name = "MESSAGE")
 
 public class MessageEntity {
     @Id
@@ -26,5 +28,9 @@ public class MessageEntity {
     @Column(name = "cycle")
     private int cycle;
     private Date createdAt;
+
+    @ManyToOne
+    @JoinColumn(name = "machine_id")
+    private MachineEntity machine;
 
 }

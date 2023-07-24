@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.datetime.DateFormatter;
+import org.springframework.transaction.annotation.Transactional;
+import pl.medos.DataAPI.respository.entity.MachineEntity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -28,5 +30,6 @@ public class Messaqe {
     private String device;
     private int cycle;
     private Date createdAt = new Date();
+    private Machine machine;
 
 }
